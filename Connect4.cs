@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,8 +34,53 @@ namespace ConnectX
 
 
 
-
         }// End of Constructor.
+        //==========================================================================================
+
+
+        //==========================================================================================
+        public void draw(Graphics l, int height, int width)
+        {
+            Pen p = new Pen(Color.Red, 5); // default color
+                                           //l.DrawEllipse(p, 0, 0, width, height);
+
+
+
+            float xAxis = width / 7;
+            float yAxis = height / 6;
+            for (int x = 0; x < 7; x++)
+            {
+                for (int y = 0; y < 6; y++)
+                {                    
+                    int startX = (int)Math.Round(x * xAxis);
+                    int startY = (int)Math.Round(y * yAxis);
+                    /*int endX = (int)Math.Round(((x+1) * xAxis));
+                    int endY = (int)Math.Round((y+1) * xAxis);*/
+
+                    l.DrawRectangle(p,startX, startY, xAxis, yAxis);
+
+
+
+
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }// End of draw() 
         //==========================================================================================
 
 

@@ -67,5 +67,14 @@ namespace ConnectX
 
 
         }//Add of addPlayerButton===================================================================
+
+        private void playButton_Click(object sender, EventArgs e)
+        {
+
+            Form gameboard = new GameBoard(_players);
+            gameboard.Show();
+
+
+        }
     }//End of Class=================================================================================
 }

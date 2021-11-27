@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConnectX
 {
-    class Player
+    public class Player
     {
         private string playerName;
         private static char currentCharacter = (char)0;
