@@ -58,9 +58,9 @@ namespace ConnectX
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(8, 55);
+            this.panel1.Location = new System.Drawing.Point(8, 76);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(779, 358);
+            this.panel1.Size = new System.Drawing.Size(779, 337);
             this.panel1.TabIndex = 2;
             // 
             // playButton

@@ -60,12 +60,13 @@ namespace ConnectX
                     /*int endX = (int)Math.Round(((x+1) * xAxis));
                     int endY = (int)Math.Round((y+1) * xAxis);*/
                     l.DrawRectangle(p,startX, startY, xAxis, yAxis);
+                    //------------------------------------------------------------------------------
+                    //This switch case is to draw the Connect 4 chips in the _gameBoard array
                     switch (_gameBoard[x, y])
                     {
                         case (char)0:
                             break;
                         case (char)1:
-                            //p = new Pen(Color.Black, 5);
                             System.Drawing.SolidBrush myBrush = 
                                 new System.Drawing.SolidBrush(System.Drawing.Color.Yellow);
                             l.FillEllipse(myBrush, startX, startY, xAxis, yAxis);
@@ -76,10 +77,8 @@ namespace ConnectX
                             break;
                         default:
                             break;
-
-
-
                     }
+                    //------------------------------------------------------------------------------
 
 
 
