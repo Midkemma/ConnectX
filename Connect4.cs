@@ -41,7 +41,7 @@ namespace ConnectX
         //==========================================================================================
         public void draw(Graphics l, int height, int width)
         {
-            Pen p = new Pen(Color.Red, 5); // default color
+            Pen p = new Pen(Color.Black, 5); // default color
                                            //l.DrawEllipse(p, 0, 0, width, height);
 
 

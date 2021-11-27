@@ -36,7 +36,7 @@ namespace ConnectX
 
 
             this.Paint += GameBoard_Paint;
-
+            this.Resize += resizeBoard;
 
 
 
@@ -45,7 +45,10 @@ namespace ConnectX
         } //End of GameBoard Constructor
         //==========================================================================================
 
-
+        private void resizeBoard(object sender, EventArgs e)
+        {
+            Invalidate();
+        }
 
 
 
@@ -54,11 +57,6 @@ namespace ConnectX
         {
             int formHeight = this.Height;
             int formWidth = this.Width;
-
-            //this.CreateGraphics().Clear(GameBoard.ActiveForm.BackColor);
-            
-
-            Pen p = new Pen(Color.Red, 5); // default color
             Graphics l = e.Graphics;
             //l.DrawEllipse(p, 50, 50, 200, 200);
             _connect4.draw(l, formHeight, formWidth);
