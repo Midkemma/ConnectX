@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ConnectX
 {
@@ -25,8 +26,9 @@ namespace ConnectX
         public Connect4(Player playerA, Player playerB)
         {
             _gameBoard = new char[7, 6];
-            _gameBoard[3, 0] = (char)1;
-            _gameBoard[2, 0] = (char)2;
+
+            //_gameBoard[3, 0] = (char)1;
+            //_gameBoard[2, 0] = (char)2;
             _players = new List<Player>();
             //Add at least 2 players to Player list
             _players.Add(playerA);
@@ -37,6 +39,13 @@ namespace ConnectX
 
 
         }// End of Constructor.
+        //==========================================================================================
+
+        //==========================================================================================
+/*        private void fillArray()
+        {
+            _gameBoard =
+        }*/
         //==========================================================================================
 
 
@@ -79,29 +88,64 @@ namespace ConnectX
                             break;
                     }
                     //------------------------------------------------------------------------------
-
-
-
                 }
             }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         }// End of draw() 
         //==========================================================================================
+
+        //==========================================================================================
+        public bool playMove(int _col, Player player)
+        {
+            if (_gameBoard[_col, 0] == 0)
+            {
+                _gameBoard[_col, 0] = player.getPlayerChar();
+                
+                int whileCount = 1;
+                
+                while (whileCount < 6 && _gameBoard[_col,whileCount] == 0)
+                {
+                    //MessageBox.Show($"Col = {_col} \n Y pos = {whileCount}");
+                    _gameBoard[_col, whileCount - 1] = (char)0;
+                    _gameBoard[_col, whileCount] = player.getPlayerChar();
+                    whileCount++;
+
+                }
+
+                return true;
+            }
+            else return false;
+        }
+        //==========================================================================================
+
+
+
+        //==========================================================================================
+        public int columCalc(int xPos,int boardWidth)
+        {
+             
+
+            return (int)Math.Floor(xPos / (boardWidth / 7.0));
+        }
+        //==========================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
