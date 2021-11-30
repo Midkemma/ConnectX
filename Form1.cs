@@ -51,7 +51,7 @@ namespace ConnectX
                 _players.Add(player);
             }
 
-            countLabel.Text = "Player( " + _players.Count.ToString() + " )";
+            countLabel.Text = $"Current Number of Players = {_players.Count.ToString()}";
 
 
         }//Add of addPlayerButton===================================================================

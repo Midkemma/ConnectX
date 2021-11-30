@@ -17,6 +17,7 @@ namespace ConnectX
         private int currentPlayer;
 
 
+
         //==========================================================================================
         private GameBoard()
         {
@@ -38,6 +39,7 @@ namespace ConnectX
             boardPanel.Paint += GameBoard_Paint;
             boardPanel.Resize += resizeBoard;
             boardPanel.Click += mousePosOnClick;
+            
 
 
 
@@ -56,13 +58,10 @@ namespace ConnectX
         private void mousePosOnClick(object sender, EventArgs e)
         {
             MouseEventArgs mEA = (MouseEventArgs)e;
-            //MessageBox.Show("X: " + mEA.X + " ." );
             int boardWidth = boardPanel.Width;
-            //int boardHeight = boardPanel.Height;
-
             int _col = _connect4.columCalc(mEA.X, boardWidth);
-            //MessageBox.Show($"The colum is {_col}. /n the mEA is {mEA.X} /n and boardWidth is {boardWidth}.");
 
+            //Player counter
             bool result = _connect4.playMove(_col, _players[currentPlayer]);
             if (result) 
             {
@@ -77,6 +76,9 @@ namespace ConnectX
         //==========================================================================================
 
         //==========================================================================================
+        //==========================================================================================
+
+        //==========================================================================================
         private void GameBoard_Paint(object sender, PaintEventArgs e)
         {
             int formHeight = boardPanel.Height;
@@ -84,23 +86,13 @@ namespace ConnectX
             Graphics l = boardPanel.CreateGraphics();
             //l.DrawEllipse(p, 50, 50, 200, 200);
             _connect4.draw(l, formHeight, formWidth);
-            playerTurnLabel.Text = "Player Turn :" + _players[currentPlayer].getPlayerName();
+            playerTurnLabel.Text = $"Player Turn : {_players[currentPlayer].getPlayerName()}";
 
 
 
             l.Dispose();
         }// end of GameBoard_Paint
-        //==========================================================================================
-
-        //==========================================================================================
-
-
-        //==========================================================================================
-        //==========================================================================================
-
-
-
-
+         //=========================================================================================
 
 
 
