@@ -31,8 +31,6 @@ namespace ConnectX
         {
             InitializeComponent();
             _players = players;
-            _players.Add(new Player("NameA", "Yellow")); //testing user
-            _players.Add(new Player("NameB", "Red")); //testing user
             _connect4 = new Connect4(_players[0], _players[1]);
             currentPlayer = 0;
 

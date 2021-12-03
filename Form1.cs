@@ -28,8 +28,9 @@ namespace ConnectX
         {
             InitializeComponent();
             _players = new List<Player>();
-            
 
+            _players.Add(new Player("NameA", "Yellow")); //testing user
+            _players.Add(new Player("NameB", "Red")); //testing user
 
 
 
