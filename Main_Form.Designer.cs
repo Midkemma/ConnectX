@@ -1,7 +1,7 @@
 ﻿
 namespace ConnectX
 {
-    partial class Form1
+    partial class Main_Form
     {
         /// <summary>
         /// Required designer variable.
@@ -31,8 +31,8 @@ namespace ConnectX
         {
             this.countLabel = new System.Windows.Forms.Label();
             this.addPlayerButton = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.playButton = new System.Windows.Forms.Button();
+            this.gameBoardPanel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // countLabel
@@ -40,9 +40,9 @@ namespace ConnectX
             this.countLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.countLabel.AutoSize = true;
             this.countLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.countLabel.Location = new System.Drawing.Point(673, 494);
+            this.countLabel.Location = new System.Drawing.Point(664, 493);
             this.countLabel.Name = "countLabel";
-            this.countLabel.Size = new System.Drawing.Size(111, 10);
+            this.countLabel.Size = new System.Drawing.Size(221, 20);
             this.countLabel.TabIndex = 0;
             this.countLabel.Text = "Current Number of Players = 0";
             // 
@@ -50,23 +50,13 @@ namespace ConnectX
             // 
             this.addPlayerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.addPlayerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addPlayerButton.Location = new System.Drawing.Point(677, 410);
+            this.addPlayerButton.Location = new System.Drawing.Point(668, 410);
             this.addPlayerButton.Name = "addPlayerButton";
             this.addPlayerButton.Size = new System.Drawing.Size(226, 80);
             this.addPlayerButton.TabIndex = 1;
             this.addPlayerButton.Text = "Add Player";
             this.addPlayerButton.UseVisualStyleBackColor = true;
             this.addPlayerButton.Click += new System.EventHandler(this.addPlayerButton_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(891, 392);
-            this.panel1.TabIndex = 2;
             // 
             // playButton
             // 
@@ -81,18 +71,28 @@ namespace ConnectX
             this.playButton.UseVisualStyleBackColor = false;
             this.playButton.Click += new System.EventHandler(this.playButton_Click);
             // 
-            // Form1
+            // gameBoardPanel
+            // 
+            this.gameBoardPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gameBoardPanel.Location = new System.Drawing.Point(12, 11);
+            this.gameBoardPanel.Name = "gameBoardPanel";
+            this.gameBoardPanel.Size = new System.Drawing.Size(882, 393);
+            this.gameBoardPanel.TabIndex = 0;
+            // 
+            // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(905, 522);
+            this.Controls.Add(this.gameBoardPanel);
             this.Controls.Add(this.addPlayerButton);
             this.Controls.Add(this.playButton);
             this.Controls.Add(this.countLabel);
-            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Main_Form";
+            this.Text = "Main_Form";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,8 +102,8 @@ namespace ConnectX
 
         private System.Windows.Forms.Label countLabel;
         private System.Windows.Forms.Button addPlayerButton;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button playButton;
+        private System.Windows.Forms.Panel gameBoardPanel;
     }
 }
 
