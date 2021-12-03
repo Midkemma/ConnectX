@@ -37,20 +37,22 @@ namespace ConnectX
             // 
             // countLabel
             // 
+            this.countLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.countLabel.AutoSize = true;
-            this.countLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.countLabel.Location = new System.Drawing.Point(559, 435);
+            this.countLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.countLabel.Location = new System.Drawing.Point(673, 494);
             this.countLabel.Name = "countLabel";
-            this.countLabel.Size = new System.Drawing.Size(80, 20);
+            this.countLabel.Size = new System.Drawing.Size(111, 10);
             this.countLabel.TabIndex = 0;
-            this.countLabel.Text = "Player(0)";
+            this.countLabel.Text = "Current Number of Players = 0";
             // 
             // addPlayerButton
             // 
+            this.addPlayerButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.addPlayerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addPlayerButton.Location = new System.Drawing.Point(668, 419);
+            this.addPlayerButton.Location = new System.Drawing.Point(677, 410);
             this.addPlayerButton.Name = "addPlayerButton";
-            this.addPlayerButton.Size = new System.Drawing.Size(120, 55);
+            this.addPlayerButton.Size = new System.Drawing.Size(226, 80);
             this.addPlayerButton.TabIndex = 1;
             this.addPlayerButton.Text = "Add Player";
             this.addPlayerButton.UseVisualStyleBackColor = true;
@@ -58,31 +60,36 @@ namespace ConnectX
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(8, 55);
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(779, 358);
+            this.panel1.Size = new System.Drawing.Size(891, 392);
             this.panel1.TabIndex = 2;
             // 
             // playButton
             // 
+            this.playButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.playButton.BackColor = System.Drawing.Color.LightGreen;
             this.playButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playButton.Location = new System.Drawing.Point(8, 420);
+            this.playButton.Location = new System.Drawing.Point(12, 410);
             this.playButton.Name = "playButton";
-            this.playButton.Size = new System.Drawing.Size(111, 54);
+            this.playButton.Size = new System.Drawing.Size(158, 104);
             this.playButton.TabIndex = 3;
             this.playButton.Text = "Play";
-            this.playButton.UseVisualStyleBackColor = true;
+            this.playButton.UseVisualStyleBackColor = false;
             this.playButton.Click += new System.EventHandler(this.playButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 486);
-            this.Controls.Add(this.playButton);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(905, 522);
             this.Controls.Add(this.addPlayerButton);
+            this.Controls.Add(this.playButton);
             this.Controls.Add(this.countLabel);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Form1";
             this.Text = "Form1";

@@ -12,7 +12,7 @@ namespace ConnectX
 {
     public partial class Form1 : Form
     {
-        Connect4 currentGame;
+        //Connect4 currentGame;
         List<Player> _players;
         
         
@@ -36,13 +36,6 @@ namespace ConnectX
 
         }//End of Form1 Constructor=================================================================
 
-
-
-
-
-
-
-
         //==========================================================================================
         private void addPlayerButton_Click(object sender, EventArgs e)
         {
@@ -56,25 +49,17 @@ namespace ConnectX
                 string playerColour = _playerInput.getColour();
                 Player player = new Player(playerName, playerColour);
                 _players.Add(player);
-
-
             }
 
-
-            countLabel.Text = "Player( " + _players.Count.ToString() + " )";
-
-
+            countLabel.Text = $"Current Number of Players = {_players.Count.ToString()}";
 
 
         }//Add of addPlayerButton===================================================================
 
         private void playButton_Click(object sender, EventArgs e)
         {
-
             Form gameboard = new GameBoard(_players);
             gameboard.Show();
-
-
         }
     }//End of Class=================================================================================
 }
