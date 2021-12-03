@@ -33,7 +33,6 @@ namespace ConnectX
             _players = players;
             _connect4 = new Connect4(_players[0], _players[1]);
             currentPlayer = 0;
-
             boardPanel.Paint += GameBoard_Paint;
             boardPanel.Resize += resizeBoard;
             boardPanel.Click += mousePosOnClick;
@@ -50,7 +49,7 @@ namespace ConnectX
         {
             boardPanel.Invalidate();
         }// end of resizeBoard
-         //==========================================================================================
+        //==========================================================================================
 
         //==========================================================================================
         private void mousePosOnClick(object sender, EventArgs e)
@@ -68,7 +67,8 @@ namespace ConnectX
                 boardPanel.Invalidate();
                 if (_connect4.getWin())
                 {
-                    MessageBox.Show($"Congratulations player {currentPlayer}, you have won!");
+                    MessageBox.Show($"Congratulations {_players[currentPlayer].getPlayerName()}.\n" +
+                        $" You have won the match! \n Well done!");
                 }
                 if (currentPlayer == _players.Count - 1)    
                 {
@@ -81,9 +81,6 @@ namespace ConnectX
         //==========================================================================================
 
         //==========================================================================================
-        //==========================================================================================
-
-        //==========================================================================================
         private void GameBoard_Paint(object sender, PaintEventArgs e)
         {
             int formHeight = boardPanel.Height;
@@ -92,19 +89,9 @@ namespace ConnectX
             //l.DrawEllipse(p, 50, 50, 200, 200);
             _connect4.draw(l, formHeight, formWidth);
             playerTurnLabel.Text = $"Player Turn : {_players[currentPlayer].getPlayerName()}";
-
-
-
             l.Dispose();
         }// end of GameBoard_Paint
-         //=========================================================================================
-
-
-
-
-
-
-
+        //==========================================================================================
 
     } // End of GameBoard class
     //==============================================================================================
