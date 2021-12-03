@@ -107,16 +107,12 @@ namespace ConnectX
                 {
                     //MessageBox.Show($"Col = {_col} \n Y pos = {whileCount}");
                     _gameBoard[_col, whileCount - 1] = (char)0;
-                    _gameBoard[_col, whileCount] = player.getPlayerChar();
-                    //Store move to check if player has won at end of turn.
+                    _gameBoard[_col, whileCount] = player.getPlayerChar();                    
                     yPos = whileCount;
                     whileCount++;
 
                 }
-                if (hasCurrentPlayerWon(player, xPos, yPos))
-                {
-                    winConditionMet = true;
-                }                
+                winConditionMet = hasCurrentPlayerWon(player, xPos, yPos);              
                 return true;
             }
             else return false;
@@ -128,7 +124,7 @@ namespace ConnectX
         // return char from array or (char)0 if outside array
         private char getGameBoardArrayData(int x, int y)
         {
-            if (x >= 6 || x < 0 || y >= 5 || y < 0) // if outside of array
+            if (x > 6 || x < 0 || y > 5 || y < 0) // if outside of array
             {
                 return (char)0; // return 0 char which is non-player char in array; 
             }
@@ -150,7 +146,7 @@ namespace ConnectX
             // Horizontal Check
             // Set the counter so the players sequence of chips can be counted
             int sequenceCount = 0;
-            for (int x = xPos - winCondition; x < xPos + winCondition; x++)
+            for (int x = xPos - (winCondition - 1); x < xPos + (winCondition - 1); x++)
             {
                 // Char to check
                 char currentChar = getGameBoardArrayData(x, yPos);
@@ -235,7 +231,12 @@ namespace ConnectX
         }// End of hasCurrentPlayerWon
         //==========================================================================================
 
-
+        //==========================================================================================
+        public bool getWin()
+        {
+            return winConditionMet;
+        }//end of getWin
+        //==========================================================================================
 
         //==========================================================================================
         public int columCalc(int xPos,int boardWidth)

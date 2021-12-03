@@ -31,8 +31,8 @@ namespace ConnectX
         {
             InitializeComponent();
             _players = players;
-            _players.Add(new Player("NameA", "Red")); //testing user
-            _players.Add(new Player("NameB", "Black")); //testing user
+            _players.Add(new Player("NameA", "Yellow")); //testing user
+            _players.Add(new Player("NameB", "Red")); //testing user
             _connect4 = new Connect4(_players[0], _players[1]);
             currentPlayer = 0;
 
@@ -63,14 +63,21 @@ namespace ConnectX
 
             //Player counter
             bool result = _connect4.playMove(_col, _players[currentPlayer]);
+
+            //check valid move
             if (result) 
             {
+                boardPanel.Invalidate();
+                if (_connect4.getWin())
+                {
+                    MessageBox.Show($"Congratulations player {currentPlayer}, you have won!");
+                }
                 if (currentPlayer == _players.Count - 1)    
                 {
                     currentPlayer = 0;
                 } else currentPlayer++;
             }
-            boardPanel.Invalidate();
+            
 
         }// end of mousePosOnClick
         //==========================================================================================
