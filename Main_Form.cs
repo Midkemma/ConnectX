@@ -26,6 +26,7 @@ namespace ConnectX
             _players = new List<Player>();
             _players.Add(new Player("NameA", "Yellow")); //testing user
             _players.Add(new Player("NameB", "Red")); //testing user
+            countLabel.Text = $"Current Number of Players = {_players.Count.ToString()}";
 
             gameBoardPanel.Paint += GameBoard_Paint;
             gameBoardPanel.Resize += resizeBoard;
@@ -36,10 +37,8 @@ namespace ConnectX
         //==========================================================================================
         private void addPlayerButton_Click(object sender, EventArgs e)
         {
-            PlayerInput _playerInput = new PlayerInput();
-            
+            PlayerInput _playerInput = new PlayerInput();            
             _playerInput.ShowDialog();
-
             if(_playerInput.DialogResult == DialogResult.OK)
             {
                 string playerName = _playerInput.getName();
@@ -47,7 +46,6 @@ namespace ConnectX
                 Player player = new Player(playerName, playerColour);
                 _players.Add(player);
             }
-
             countLabel.Text = $"Current Number of Players = {_players.Count.ToString()}";
 
 
@@ -56,8 +54,7 @@ namespace ConnectX
 
         //==========================================================================================
         private void playButton_Click(object sender, EventArgs e)
-        {
-            InitializeComponent();
+        {            
             _connect4 = new Connect4(_players[0], _players[1]);
             currentPlayer = 0;
 

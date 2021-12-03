@@ -54,12 +54,6 @@
     <Compile Include="Main_Form.Designer.cs">
       <DependentUpon>Main_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="GameBoard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GameBoard.Designer.cs">
-      <DependentUpon>GameBoard.cs</DependentUpon>
-    </Compile>
     <Compile Include="Player.cs" />
     <Compile Include="PlayerInput.cs">
       <SubType>Form</SubType>
@@ -71,9 +65,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Main_Form.resx">
       <DependentUpon>Main_Form.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GameBoard.resx">
-      <DependentUpon>GameBoard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PlayerInput.resx">
       <DependentUpon>PlayerInput.cs</DependentUpon>
