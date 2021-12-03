@@ -17,42 +17,23 @@ namespace ConnectX
         //bool to see if the winCondition has been met
         private bool winConditionMet;
 
-        
-
-
-
-
 
         //==========================================================================================
         public Connect4(Player playerA, Player playerB)
         {
             _gameBoard = new char[7, 6];
-            //_gameBoard[3, 0] = (char)1;
-            //_gameBoard[2, 0] = (char)2;
             _players = new List<Player>();
-            //Add at least 2 players to Player list
+            //Add 2 players to Player list
             _players.Add(playerA);
             _players.Add(playerB);
             winConditionMet = false;
-
-
-
-
-
         }// End of Constructor.
         //==========================================================================================
 
         //==========================================================================================
-        //==========================================================================================
-
-
-        //==========================================================================================
         public void draw(Graphics l, int height, int width)
         {
-            Pen p = new Pen(Color.Black, 5); // default color
-            //l.DrawEllipse(p, 50, 50, width, height);
-
-
+            Pen p = new Pen(Color.Black, 5); // default color 
 
             float xAxis = width / 7;
             float yAxis = height / 6;
@@ -87,9 +68,7 @@ namespace ConnectX
                     //------------------------------------------------------------------------------
                 }
             }
-
-
-        }// End of draw() 
+        }// End of draw.
         //==========================================================================================
 
         //==========================================================================================
@@ -104,19 +83,17 @@ namespace ConnectX
                 
                 int whileCount = 1;
                 while (whileCount < 6 && _gameBoard[_col,whileCount] == 0)
-                {
-                    //MessageBox.Show($"Col = {_col} \n Y pos = {whileCount}");
+                {                    
                     _gameBoard[_col, whileCount - 1] = (char)0;
                     _gameBoard[_col, whileCount] = player.getPlayerChar();                    
                     yPos = whileCount;
                     whileCount++;
-
                 }
                 winConditionMet = hasCurrentPlayerWon(player, xPos, yPos);              
                 return true;
             }
             else return false;
-        }
+        }// End of PlayMove()
         //==========================================================================================
 
         //==========================================================================================
@@ -130,7 +107,7 @@ namespace ConnectX
             }
             return _gameBoard[x, y];
         }// End of getGameBoardArrayData(int x, int y)
-         //==========================================================================================
+        //==========================================================================================
 
         //==========================================================================================
         /// <summary>
@@ -235,7 +212,7 @@ namespace ConnectX
         public bool getWin()
         {
             return winConditionMet;
-        }//end of getWin
+        }// End of getWin
         //==========================================================================================
 
         //==========================================================================================
@@ -244,29 +221,11 @@ namespace ConnectX
              
 
             return (int)Math.Floor(xPos / (boardWidth / 7.0));
-        }
+        }// End of columCalc
         //==========================================================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
         //==========================================================================================
     }// End of Class.
-}
+}//#################################################################################################
