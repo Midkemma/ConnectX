@@ -27,10 +27,6 @@ namespace ConnectX
             _players.Add(new Player("NameB", "Red")); //testing user
             countLabel.Text = $"Current Number of Players = {_players.Count.ToString()}";
 
-            gameBoardPanel.Paint += GameBoard_Paint;
-            gameBoardPanel.Resize += resizeBoard;
-            gameBoardPanel.Click += mousePosOnClick;
-
         }// End of Form1 Constructor
         //==========================================================================================
 
@@ -48,7 +44,6 @@ namespace ConnectX
             }
             countLabel.Text = $"Current Number of Players = {_players.Count.ToString()}";
 
-
         }// End of addPlayerButton
         //==========================================================================================
 
@@ -57,7 +52,9 @@ namespace ConnectX
         {            
             _connect4 = new Connect4(_players[0], _players[1]);
             currentPlayer = 0;
-
+            gameBoardPanel.Paint += GameBoard_Paint;
+            gameBoardPanel.Resize += resizeBoard;
+            gameBoardPanel.Click += mousePosOnClick;
             gameBoardPanel.Invalidate();
 
         } // End of playButton_Click
@@ -76,10 +73,8 @@ namespace ConnectX
             int formHeight = gameBoardPanel.Height;
             int formWidth = gameBoardPanel.Width;
             Graphics l = gameBoardPanel.CreateGraphics();
-            //l.DrawEllipse(p, 50, 50, 200, 200);
             if(_connect4 !=null)
                 _connect4.draw(l, formHeight, formWidth);
-            //playerTurnLabel.Text = $"Player Turn : {_players[currentPlayer].getPlayerName()}";
             l.Dispose();
         }// end of GameBoard_Paint
         //==========================================================================================
